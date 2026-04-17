@@ -11,6 +11,7 @@ import Homepage from './Pages/Homepage';
 import Friend_detailes from './Component/Friend_detailes';
 import Timecontext from './context/Timecontext';
 import Notfound from './Component/Notfound';
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Timecontext>
       <RouterProvider router={router} />
+      <Toaster position='top-right' />
     </Timecontext>
   </StrictMode>,
 );

@@ -10,6 +10,7 @@ import text from '../assets/text.png'
 import video from '../assets/video.png'
 import { useContext } from 'react';
 import { Timedecontext } from '../context/Timedecontext';
+import toast from "react-hot-toast";
 const Friend_detailes = () => {
   const {id} = useParams();
   const { data, navigation } = useFriends();
@@ -29,7 +30,31 @@ const Friend_detailes = () => {
       name: expectedFriend.name,
       type: type,
     };
-    setTimelines([...timelines, newTimeline])
+    setTimelines([...timelines, newTimeline]);
+    if (type === 'call') {
+      toast(
+        <div className="flex gap-3 bg-[#244d3f]">
+          <img className="w-5 h-5" src={call} alt="call" />
+          <span>Called {expectedFriend.name}</span>
+        </div>,   
+      );
+    }
+    if (type === 'text') {
+      toast(
+        <div className='flex gap-3'>
+          <img className='w-5 h-5' src={text} alt="text" />
+          <span>Message {expectedFriend.name}</span>
+        </div>
+      );
+    }
+    if (type === 'video') {
+      toast(
+        <div className="flex gap-3">
+          <img className="w-5 h-5" src={video} alt="video" />
+          <span>Vedio {expectedFriend.name}</span>
+        </div>,
+      );
+    }
   }
   
   return (
