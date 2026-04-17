@@ -1,36 +1,46 @@
 import React from 'react';
-import { Legend, Pie, PieChart } from "recharts";
+import { Legend, Pie, PieChart, Tooltip } from "recharts";
+import { useContext } from 'react';
+import { Timedecontext } from '../../context/Timedecontext';
 const Stats = () => {
+  const { timelines} = useContext(Timedecontext);
+  const callCount = timelines.filter(item => item.type === 'call').length;
+  const textCount = timelines.filter(item => item.type === 'text').length;
+  const videoCount = timelines.filter(item => item.type === 'video').length;
   const data = [
-    { name: "Call", value: 400, fill: "#0088FE" },
-    { name: "Text", value: 300, fill: "#00C49F" },
-    { name: "Video", value: 300, fill: "#FFBB28" },
+    { name: "Call", value: callCount, fill: "#0088FE" },
+    { name: "Text", value: textCount, fill: "#00C49F" },
+    { name: "Video", value: videoCount, fill: "#FFBB28" },
   ];
   return (
-    <div>
-      <PieChart
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          maxHeight: "80vh",
-          aspectRatio: 1,
-        }}
-        responsive
-      >
-        <Pie
-          data={data}
-          innerRadius="80%"
-          outerRadius="100%"
+    <div className="w-10/12 flex my-10 mx-auto flex-col">
+      <h2 className='font-bold text-3xl mb-5'>Frienship Analytics</h2>
+      <div className="card bg-base-100 w-full shadow-sm mx-auto flex flex-col p-6 items-center">
+        <h2 className='w-full text-left'>By Interaction Type</h2>
+        <PieChart className='text-center'
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            maxHeight: "80vh",
+            aspectRatio: 1,
+          }}
+          responsive
+        >
+          <Pie
+            data={data}
+            innerRadius="80%"
+            outerRadius="100%"
+            cornerRadius="50%"
+            fill="#8884d8"
+            paddingAngle={5}
+            dataKey="value"
+            isAnimationActive={true}
+          />
+          <Tooltip />
           
-          cornerRadius="50%"
-          fill="#8884d8"
-        
-          paddingAngle={5}
-          dataKey="value"
-          isAnimationActive={true}
-        />
-        <Legend />
-      </PieChart>
+          <Legend />
+        </PieChart>
+      </div>
     </div>
   );
 };
