@@ -63,10 +63,15 @@ https://your-live-link.com
 ## 📂 Project Structure
 src/
 ├── components/
+
 ├── pages/
+
 ├── context/
+
 ├── assets/
+
 ├── data/
+
 ├── layout/
 ---
 
