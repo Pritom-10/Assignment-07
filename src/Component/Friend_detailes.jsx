@@ -33,7 +33,7 @@ const Friend_detailes = () => {
   }
   
   return (
-    <div className="w-11/12 mx-auto mt-12 grid grid-cols-2 items-center justify-center gap-6">
+    <div className="w-11/12 mx-auto mt-12 grid grid-cols-1 items-center justify-center gap-6 lg:grid-cols-2">
       <div className="flex flex-col justify-center gap-3">
         <div className=" mt-6">
           <div key={id}>
@@ -96,9 +96,9 @@ const Friend_detailes = () => {
       </div>
 
       <div className="flex flex-col gap-3">
-        <div className="flex justify-center items-center gap-12">
+        <div className="flex justify-center items-center gap-1 md:gap-6 lg:gap-12">
           <div className="card bg-base-100 w-68 shadow-sm">
-            <p className="text-center p-8">
+            <p className="text-center p-3 md:p-5 lg:p-8">
               <span className="text-3xl">
                 {expectedFriend.days_since_contact}
               </span>{" "}
@@ -106,13 +106,13 @@ const Friend_detailes = () => {
             </p>
           </div>
           <div className="card bg-base-100 w-68 shadow-sm">
-            <p className="text-center p-8">
+            <p className="text-center p-3 md:p-5 lg:p-8">
               <span className="text-3xl">{expectedFriend.goal}</span> <br />{" "}
               Goal(Days)
             </p>
           </div>
           <div className="card bg-base-100 w-68 shadow-sm">
-            <p className="text-center p-8">
+            <p className="text-center p-3 md:p-5 lg:p-8">
               <span className="text-2xl"> {expectedFriend.next_due_date}</span>{" "}
               <br /> Next Due
             </p>
@@ -136,7 +136,7 @@ const Friend_detailes = () => {
         </div>
         <div className="card bg-base-100 w-full shadow-sm mt-4 p-8">
           <h3 className="mb-2 text-2xl">Quick Check-In</h3>
-          <div className="flex gap-5">
+          <div className="flex gap-2 md:gap-3 lg:gap-5">
             <div className="card bg-[#e9e9e9] w-1/3 shadow-sm">
               <div
                 onClick={() => handleCall("call")}

@@ -20,7 +20,7 @@ const Friends = () => {
         <h2 className="text-2xl font-medium">Your Friends</h2>
       </div>
 
-      <div className="grid grid-cols-4 w-11/12 mx-auto mt-6 gap-5">
+      <div className="grid grid-cols-2 w-11/12 mx-auto mt-6 gap-5 lg:grid-cols-4 md:grid-cols-3">
         {data.map((friend, id) => {
           return (
             <Link to={`/friends/${friend.id}`} key={id}>
