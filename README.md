@@ -6,7 +6,7 @@ It helps users track, manage, and maintain meaningful connections through smart 
 ---
 
 ## 🚀 Live Demo
-https://your-live-link.com
+https://dashing-gnome-ad9615.netlify.app/
 
 ---
 
