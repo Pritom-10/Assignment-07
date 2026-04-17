@@ -50,7 +50,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Timecontext>
       <RouterProvider router={router} />
-      <Toaster position='top-right' />
+      <Toaster  position='top-right' />
     </Timecontext>
   </StrictMode>,
 );
