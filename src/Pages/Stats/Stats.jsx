@@ -3,7 +3,10 @@ import { Legend, Pie, PieChart, Tooltip } from "recharts";
 import { useContext } from 'react';
 import { Timedecontext } from '../../context/Timedecontext';
 const Stats = () => {
- 
+  const { timelines} = useContext(Timedecontext);
+  const callCount = timelines.filter(item => item.type === 'call').length;
+  const textCount = timelines.filter(item => item.type === 'text').length;
+  const videoCount = timelines.filter(item => item.type === 'video').length;
   const data = [
     { name: "Call", value: callCount, fill: "#0088FE" },
     { name: "Text", value: textCount, fill: "#00C49F" },
