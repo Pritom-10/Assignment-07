@@ -2,7 +2,9 @@ import React from 'react';
 import { Legend, Pie, PieChart } from "recharts";
 const Stats = () => {
   const data = [
-   
+    { name: "Call", value: 400, fill: "#0088FE" },
+    { name: "Text", value: 300, fill: "#00C49F" },
+    { name: "Video", value: 300, fill: "#FFBB28" },
   ];
   return (
     <div>
