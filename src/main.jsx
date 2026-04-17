@@ -10,7 +10,7 @@ import Stats from './Pages/Stats/Stats';
 import Homepage from './Pages/Homepage';
 import Friend_detailes from './Component/Friend_detailes';
 import Timecontext from './context/Timecontext';
-// import { Timedecontext } from './context/Timedecontext';
+import Notfound from './Component/Notfound';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <Stats />,
       },
     ],
-    errorElement: <h2>404 Not Found</h2>,
+    errorElement: <Notfound/>,
   },
 ]);
 
